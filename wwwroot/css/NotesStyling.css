@@ -1,0 +1,38 @@
+﻿body {
+    background-image: url(../images/background.jpg);
+    font-family: 'Times New Roman', Times, serif;
+    color: antiquewhite;
+}
+
+.note-card {
+    background-color: darkslategrey;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    padding: 20px;
+    margin: 10px 5px 5px 18px;
+    height: 400px;
+    width: 400px;
+    float: initial;
+}
+
+.links {
+    
+    font-family: Times;
+    font-size: 1rem;
+    color: antiquewhite;
+}
+
+button {
+    text-decoration: none;
+    width: 120px;
+    background-color: darkseagreen;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    height: 40px;
+    text-align: center;
+    padding: 5px;
+}

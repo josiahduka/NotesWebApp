@@ -1,0 +1,32 @@
+﻿@model NotesWebApp.Models.Note
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayNote</title>
+    <link type="text/css" rel="stylesheet" href="~/css/NotesStyling.css" />
+</head>
+<body>
+    <div class="note-card">
+        <h2>@Html.DisplayNameFor(model => model.Title)   @Model.Title</h2>
+        <h3>@Html.DisplayNameFor(model => model.Body)</h3> <h4>@Model.Body</h4>
+        <p>@Html.DisplayNameFor(model => model.Folder)    @Model.Folder</p>
+        <p>@Html.DisplayNameFor(model => model.DateCreated)    @Model.DateCreated</p>
+
+    
+        <br />
+
+        @Html.ActionLink("See All Notes", "DisplayAllNotes")
+         <br />
+        <!--Ability to delete note in the single note display-->
+        @Html.ActionLink("Edit", "EditNote", new { Id = Model.Id })
+        <br />
+        @Html.ActionLink("Delete", "DeleteNote", new { Id = Model.Id })
+    </div>
+</body>
+</html>

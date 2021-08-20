@@ -1,0 +1,48 @@
+﻿@model IEnumerable<NotesWebApp.Models.Note>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DisplayAllNotes</title>
+    <link type="text/css" rel="stylesheet" href="~/css/NotesStyling.css" />
+</head>
+<body>
+    <!--Add new note-->
+    @Html.ActionLink("Add New Note", "AddNote")
+
+    @foreach (var note in Model)
+    {
+    <div class="note-card">
+
+
+        <h2>@note.Title</h2>
+        <h3>@Html.DisplayNameFor(model => model.Body)</h3> <h5>@note.Body</h5>
+
+        <br />
+        <br />
+        <!--Display the details-->
+        
+        <button type="button">@Html.ActionLink("Details", "DisplayNote", new { Id = note.Id })</button>
+        
+        <br />
+                <!--Edit each note-->
+        <button type="button">@Html.ActionLink("Edit", "EditNote", new { Id = note.Id })</button>
+        
+        <br />
+                            <!--Delete  note-->
+        <button type="button">@Html.ActionLink("Delete", "DeleteNote", new { Id = note.Id })</button>
+
+
+</div>
+    }
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿@model NotesWebApp.Models.Note
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditNote</title>
+    <link type="text/css" rel="stylesheet" href="~/css/NotesStyling.css" />
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+
+        <!--Only want specific items to be edited, w/ some necessary validation-->
+        <h2>@Html.LabelFor(model => model.Title)</h2>
+        @Html.EditorFor(model => model.Title)
+
+        <br />
+        <br />
+        <h2>@Html.LabelFor(model => model.Body)</h2>
+        @Html.EditorFor(model => model.Body)
+
+        <br />
+        <br />
+        <h2>@Html.LabelFor(model => model.Folder)</h2>
+        @Html.EditorFor(model => model.Folder)
+
+
+        <br />
+        <br />
+        <input type="submit" value="Save" />
+    }
+
+    @Html.ValidationSummary()
+    
+    <!--Ability to delete note while being edited-->
+
+</body>
+</html>
